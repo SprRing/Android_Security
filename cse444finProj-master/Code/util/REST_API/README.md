@@ -1,0 +1,384 @@
+# The Rest APIs required to fetch the methods associated with permission tags
+
+# The end points and the API documentation can be accessed at
+Open [https://documenter.getpostman.com/view/1306641/TVetcmYu](https://documenter.getpostman.com/view/1306641/TVetcmYu)
+
+
+# Interaction between C and Node.js
+
+## How to make an API call from a C program? - Refer the callAPI.c file for the code or check below
+## to run the C file use `gcc callAPI.c -lcurl`
+```
+#include <stdio.h>
+#include <curl/curl.h>
+int main(void)
+{
+  CURL *curl;
+  CURLcode res;
+
+  curl = curl_easy_init();
+  if(curl) 
+  {
+    curl_easy_setopt(curl, CURLOPT_URL, "http://18.191.126.212:8888/singlePermissionMethods/?perm=camera");
+    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+    res = curl_easy_perform(curl);
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+    curl_easy_cleanup(curl);
+  }
+  return 0;
+}
+```
+
+## How to run a C program from node.js? - refer the callCcode function for the code 
+
+# In case you'd like to run the node server on your own machines, Follow the below steps - Be the node code folder
+1. `npm install`
+2. `nodemon index.js`
+
+
+# Permissions list
+List of permissions Please use the tags on the right while invoking the APIs
+
+        android.permission.CLEAR_APP_CACHE - CLEAR_APP_CACHE
+        android.permission.GET_PACKAGE_SIZE - GET_PACKAGE_SIZE
+        android.permission.SET_WALLPAPER_HINTS - SET_WALLPAPER_HINTS
+        android.permission.RECEIVE_SMS - RECEIVE_SMS
+        android.permission.RESTART_PACKAGES - RESTART_PACKAGES
+        android.permission.MODIFY_AUDIO_SETTINGS - MODIFY_AUDIO_SETTINGS
+        android.permission.SET_WALLPAPER - SET_WALLPAPER
+        android.permission.READ_CONTACTS - READ_CONTACTS
+        android.permission.WRITE_SMS - WRITE_SMS
+        android.permission.ACCESS_COARSE_LOCATION - ACCESS_COARSE_LOCATION
+        com.android.voicemail.permission.ADD_VOICEMAIL - permission.ADD_VOICEMAIL
+        android.permission.READ_CALL_LOG - READ_CALL_LOG
+        android.permission.ACCESS_LOCATION_EXTRA_COMMANDS - ACCESS_LOCATION_EXTRA_COMMANDS
+        android.permission.READ_PHONE_STATE - READ_PHONE_STATE
+        com.android.browser.permission.WRITE_HISTORY_BOOKMARKS - WRITE_HISTORY_BOOKMARKS
+        android.permission.READ_PROFILE - READ_PROFILE
+        android.permission.GET_TASKS - GET_TASKS
+        android.permission.WRITE_USER_DICTIONARY - WRITE_USER_DICTIONARY
+        android.permission.ACCESS_NETWORK_STATE - ACCESS_NETWORK_STATE
+        android.permission.MANAGE_ACCOUNTS - MANAGE_ACCOUNTS
+        android.permission.AUTHENTICATE_ACCOUNTS - AUTHENTICATE_ACCOUNTS
+        android.permission.SEND_SMS - SEND_SMS
+        android.permission.SYSTEM_ALERT_WINDOW - SYSTEM_ALERT_WINDOW
+        android.permission.BLUETOOTH_ADMIN - BLUETOOTH_ADMIN
+        android.permission.WRITE_CONTACTS - WRITE_CONTACTS
+        android.permission.WRITE_SYNC_SETTINGS - WRITE_SYNC_SETTINGS
+        android.permission.ACCESS_MOCK_LOCATION - ACCESS_MOCK_LOCATION
+        android.permission.EXPAND_STATUS_BAR - EXPAND_STATUS_BAR
+        android.permission.USE_SIP - USE_SIP
+        android.permission.READ_CALENDAR - READ_CALENDAR
+        android.permission.DISABLE_KEYGUARD - DISABLE_KEYGUARD
+        android.permission.CHANGE_WIFI_STATE - CHANGE_WIFI_STATE
+        android.permission.VIBRATE - VIBRATE
+        android.permission.READ_SYNC_STATS - READ_SYNC_STATS
+        android.permission.WAKE_LOCK - WAKE_LOCK
+        android.permission.ACCESS_WIFI_STATE - ACCESS_WIFI_STATE
+        android.permission.FLASHLIGHT - FLASHLIGHT
+        android.permission.RECEIVE_MMS - RECEIVE_MMS
+        android.permission.USE_CREDENTIALS - USE_CREDENTIALS
+        android.permission.NFC - NFC
+        android.permission.ACCESS_FINE_LOCATION - ACCESS_FINE_LOCATION
+        android.permission.BROADCAST_STICKY - BROADCAST_STICKY
+        android.permission.CHANGE_NETWORK_STATE - CHANGE_NETWORK_STATE
+        android.permission.BLUETOOTH - BLUETOOTH
+        android.permission.KILL_BACKGROUND_PROCESSES - KILL_BACKGROUND_PROCESSES
+        android.permission.TRANSMIT_IR - TRANSMIT_IR
+        android.permission.CAMERA - CAMERA
+        android.permission.INTERNET - INTERNET
+        android.permission.RECEIVE_BOOT_COMPLETED - RECEIVE_BOOT_COMPLETED
+        android.permission.WRITE_CALENDAR - WRITE_CALENDAR
+        android.permission.RECEIVE_WAP_PUSH - RECEIVE_WAP_PUSH
+        com.android.browser.permission.READ_HISTORY_BOOKMARKS - READ_HISTORY_BOOKMARKS
+        android.permission.CHANGE_WIFI_MULTICAST_STATE - CHANGE_WIFI_MULTICAST_STATE
+        android.permission.REORDER_TASKS - REORDER_TASKS
+        android.permission.SET_TIME_ZONE - SET_TIME_ZONE
+        android.permission.READ_SYNC_SETTINGS - READ_SYNC_SETTINGS
+        android.permission.GET_ACCOUNTS - GET_ACCOUNTS
+        android.permission.WRITE_SETTINGS - WRITE_SETTINGS
+        android.permission.RECORD_AUDIO - RECORD_AUDIO
+        android.permission.READ_SMS - READ_SMS
+        android.permission.LOCATION_HARDWARE - LOCATION_HARDWARE
+        android.permission.BLUETOOTH_ADMIN - BLUETOOTH_ADMIN
+        android.permission.BLUETOOTH - BLUETOOTH
+        android.permission.BLUETOOTH_PRIVILEGED - BLUETOOTH_PRIVILEGED
+        android.permission.ACCESS_COARSE_LOCATION - ACCESS_COARSE_LOCATION 
+        android.permission.ACCESS_FINE_LOCATION - ACCESS_FINE_LOCATION 
+        android.permission.PEERS_MAC_ADDRESS - PEERS_MAC_ADDRESS 
+        android.permission.UPDATE_DEVICE_STATS - UPDATE_DEVICE_STATS
+        android.permission.MODIFY_PHONE_STATE - MODIFY_PHONE_STATE 
+        android.permission.TETHER_PRIVILEGED - TETHER_PRIVILEGED
+        android.car.permission.CAR_RADIO - CAR_RADIO
+        android.car.permission.CAR_CAMERA - CAR_CAMERA
+        android.car.permission.CAR_HVAC - CAR_HVAC
+        android.car.permission.CAR_MOCK_VEHICLE_HAL - CAR_MOCK_VEHICLE_HAL
+        android.car.permission.CAR_NAVIGATION_MANAGER - CAR_NAVIGATION_MANAGER
+        android.car.permission.CAR_PROJECTION - CAR_PROJECTION
+        android.car.permission.CAR_RADIO - CAR_RADIO
+        android.car.permission.CONTROL_APP_BLOCKING - CONTROL_APP_BLOCKING
+        android.permission.CALL_PRIVILEGED - CALL_PRIVILEGED
+        android.permission.READ_PRIVILEGED_PHONE_STATE - READ_PRIVILEGED_PHONE_STATE
+        android.permission.MODIFY_PHONE_STATE - MODIFY_PHONE_STATE
+        android.permission.READ_CONTACTS - READ_CONTACTS
+        android.permission.WRITE_CONTACTS - WRITE_CONTACTS
+        android.permission.RECEIVE_SMS - RECEIVE_SMS
+        android.permission.SEND_SMS - SEND_SMS
+        android.permission.READ_EXTERNAL_STORAGE - READ_EXTERNAL_STORAGE 
+        android.permission.SEND_SMS_NO_CONFIRMATION - SEND_SMS_NO_CONFIRMATION
+        android.permission.CALL_PHONE - CALL_PHONE
+        android.permission.CONTROL_LOCATION_UPDATES - CONTROL_LOCATION_UPDATES
+        android.permission.CONNECTIVITY_INTERNAL - CONNECTIVITY_INTERNAL
+        android.permission.MODIFY_PHONE_STATE - MODIFY_PHONE_STATE
+        android.permission.ACCESS_FINE_LOCATION - ACCESS_FINE_LOCATION
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.ACCESS_NETWORK_STATE - ACCESS_NETWORK_STATE
+        android.permission.READ_NETWORK_USAGE_HISTORY - READ_NETWORK_USAGE_HISTORY
+        android.permission.INTERACT_ACROSS_USERS - INTERACT_ACROSS_USERS
+        android.permission.UPDATE_APP_OPS_STATS - UPDATE_APP_OPS_STATS
+        android.permission.GET_APP_OPS_STATS - GET_APP_OPS_STATS
+        android.permission.INTERACT_ACROSS_USERS - INTERACT_ACROSS_USERS
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.MANAGE_APP_OPS_RESTRICTIONS - MANAGE_APP_OPS_RESTRICTIONS
+        android.permission.LOCAL_MAC_ADDRESS - LOCAL_MAC_ADDRESS
+        android.permission.ACCESS_NETWORK_STATE - ACCESS_NETWORK_STATE
+        android.permission.CONNECTIVITY_INTERNAL - CONNECTIVITY_INTERNAL
+        android.permission.CONTROL_VPN - CONTROL_VPN
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.TETHER_PRIVILEGED - TETHER_PRIVILEGED
+        android.permission.CONNECTIVITY_INTERNAL - CONNECTIVITY_INTERNAL
+        android.permission.ACCESS_WIFI_STATE - ACCESS_WIFI_STATE
+        android.permission.ACCESS_NETWORK_STATE - ACCESS_NETWORK_STATE 
+        android.permission.CONNECTIVITY_USE_RESTRICTED_NETWORKS - CONNECTIVITY_USE_RESTRICTED_NETWORKS
+        android.permission.CHANGE_NETWORK_STATE - CHANGE_NETWORK_STATE
+        android.permission.TETHER_PRIVILEGED - TETHER_PRIVILEGED
+        android.permission.ACCESS_NETWORK_STATE - ACCESS_NETWORK_STATE
+        android.permission.PACKET_KEEPALIVE_OFFLOAD - PACKET_KEEPALIVE_OFFLOAD
+        android.permission.TETHER_PRIVILEGED - TETHER_PRIVILEGED
+        android.permission.TRANSMIT_IR - TRANSMIT_IR
+        android.permission.CHANGE_DEVICE_IDLE_TEMP_WHITELIST - CHANGE_DEVICE_IDLE_TEMP_WHITELIST
+        android.permission.DEVICE_POWER - DEVICE_POWER
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.WRITE_SECURE_SETTINGS - WRITE_SECURE_SETTINGS
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.READ_EXTERNAL_STORAGE - READ_EXTERNAL_STORAGE
+        android.permission.ACCESS_COARSE_LOCATION - ACCESS_COARSE_LOCATION
+        android.permission.ACCESS_FINE_LOCATION - ACCESS_FINE_LOCATION
+        android.permission.INSTALL_LOCATION_PROVIDER - INSTALL_LOCATION_PROVIDER
+        android.permission.UPDATE_APP_OPS_STATS - UPDATE_APP_OPS_STATS 
+        android.permission.UPDATE_DEVICE_STATS - UPDATE_DEVICE_STATS
+        android.permission.ACCESS_LOCATION_EXTRA_COMMANDS - ACCESS_LOCATION_EXTRA_COMMANDS
+        android.permission.ACCESS_KEYGUARD_SECURE_STORAGE - ACCESS_KEYGUARD_SECURE_STORAGE
+        android.permission.READ_CONTACTS - READ_CONTACTS
+        android.permission.RECEIVE_MMS - RECEIVE_MMS
+        android.permission.SEND_SMS - SEND_SMS
+        android.permission.STORAGE_INTERNAL - STORAGE_INTERNAL
+        android.permission.MOUNT_FORMAT_FILESYSTEMS - MOUNT_FORMAT_FILESYSTEMS
+        android.permission.CRYPT_KEEPER - CRYPT_KEEPER
+        android.permission.ASEC_CREATE - ASEC_CREATE
+        android.permission.ASEC_DESTROY - ASEC_DESTROY
+        android.permission.MOUNT_UNMOUNT_FILESYSTEMS - MOUNT_UNMOUNT_FILESYSTEMS
+        android.permission.ASEC_ACCESS - ASEC_ACCESS
+        android.permission.ASEC_MOUNT_UNMOUNT - ASEC_MOUNT_UNMOUNT
+        android.permission.ASEC_RENAME - ASEC_RENAME
+        android.permission.SHUTDOWN - SHUTDOWN
+        android.permission.SCORE_NETWORKS - SCORE_NETWORKS
+        android.permission.BROADCAST_NETWORK_PRIVILEGED - BROADCAST_NETWORK_PRIVILEGED
+        android.permission.INTERNET - INTERNET
+        android.permission.RECOVERY - RECOVERY
+        android.permission.SERIAL_PORT - SERIAL_PORT
+        android.permission.ACCESS_COARSE_LOCATION - ACCESS_COARSE_LOCATION
+        android.permission.READ_PHONE_STATE - READ_PHONE_STATE
+        android.permission.READ_PRECISE_PHONE_STATE - READ_PRECISE_PHONE_STATE
+        android.permission.READ_PRIVILEGED_PHONE_STATE - READ_PRIVILEGED_PHONE_STATE
+        android.permission.WRITE_SECURE_SETTINGS - WRITE_SECURE_SETTINGS
+        android.permission.UPDATE_LOCK - UPDATE_LOCK
+        android.permission.UPDATE_APP_OPS_STATS - UPDATE_APP_OPS_STATS
+        android.permission.VIBRATE - VIBRATE
+        android.permission.REMOVE_TASKS - REMOVE_TASKS
+        android.permission.CONFIRM_FULL_BACKUP - CONFIRM_FULL_BACKUP
+        android.permission.SET_DEBUG_APP - SET_DEBUG_APP
+        android.permission.START_ANY_ACTIVITY - START_ANY_ACTIVITY
+        android.permission.START_TASKS_FROM_RECENTS - START_TASKS_FROM_RECENTS
+        android.permission.BROADCAST_STICKY - BROADCAST_STICKY
+        android.permission.CLEAR_APP_GRANTED_URI_PERMISSIONS - CLEAR_APP_GRANTED_URI_PERMISSIONS
+        android.permission.BACKUP - BACKUP
+        android.permission.FORCE_STOP_PACKAGES - FORCE_STOP_PACKAGES
+        android.permission.MANAGE_ACTIVITY_STACKS - MANAGE_ACTIVITY_STACKS
+        android.permission.SET_ACTIVITY_WATCHER - SET_ACTIVITY_WATCHER
+        android.permission.GET_TOP_ACTIVITY_INFO - GET_TOP_ACTIVITY_INFO
+        android.permission.ACCESS_CONTENT_PROVIDERS_EXTERNALLY - ACCESS_CONTENT_PROVIDERS_EXTERNALLY
+        android.permission.GET_APP_GRANTED_URI_PERMISSIONS - GET_APP_GRANTED_URI_PERMISSIONS
+        android.permission.GET_INTENT_SENDER_INTENT - GET_INTENT_SENDER_INTENT
+        android.permission.PACKAGE_USAGE_STATS - PACKAGE_USAGE_STATS
+        android.permission.GET_DETAILED_TASKS - GET_DETAILED_TASKS
+        android.permission.REAL_GET_TASKS - REAL_GET_TASKS
+        android.permission.GET_TASKS - GET_TASKS 
+        android.permission.REAL_GET_TASKS - REAL_GET_TASKS 
+        android.permission.MANAGE_ACTIVITY_STACKS - MANAGE_ACTIVITY_STACKS 
+        android.permission.READ_FRAME_BUFFER - READ_FRAME_BUFFER
+        android.permission.FILTER_EVENTS - FILTER_EVENTS
+        android.permission.KILL_BACKGROUND_PROCESSES - KILL_BACKGROUND_PROCESSES
+        android.permission.KILL_UID - KILL_UID
+        android.permission.REORDER_TASKS - REORDER_TASKS
+        android.permission.SET_DEBUG_APP - SET_DEBUG_APP
+        android.permission.START_ANY_ACTIVITY - START_ANY_ACTIVITY
+        android.permission.START_TASKS_FROM_RECENTS - START_TASKS_FROM_RECENTS
+        android.permission.REMOVE_TASKS - REMOVE_TASKS
+        android.permission.DUMP - DUMP 
+        android.permission.SET_ACTIVITY_WATCHER - SET_ACTIVITY_WATCHER
+        android.permission.SET_ALWAYS_FINISH - SET_ALWAYS_FINISH
+        android.permission.SET_DEBUG_APP - SET_DEBUG_APP
+        android.permission.SET_SCREEN_COMPATIBILITY - SET_SCREEN_COMPATIBILITY
+        android.permission.INTERNAL_SYSTEM_WINDOW - INTERNAL_SYSTEM_WINDOW
+        android.permission.SET_PROCESS_LIMIT - SET_PROCESS_LIMIT
+        android.permission.SIGNAL_PERSISTENT_PROCESSES - SIGNAL_PERSISTENT_PROCESSES 
+        android.permission.START_TASKS_FROM_RECENTS - START_TASKS_FROM_RECENTS
+        android.permission.BROADCAST_STICKY - BROADCAST_STICKY 
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.BIND_VOICE_INTERACTION - BIND_VOICE_INTERACTION
+        android.permission.STOP_APP_SWITCHES - STOP_APP_SWITCHES
+        android.permission.FORCE_BACK - FORCE_BACK
+        android.permission.CHANGE_CONFIGURATION - CHANGE_CONFIGURATION
+        android.permission.BATTERY_STATS - BATTERY_STATS
+        android.permission.UPDATE_DEVICE_STATS - UPDATE_DEVICE_STATS
+        android.permission.BROADCAST_STICKY - BROADCAST_STICKY
+        android.permission.READ_EXTERNAL_STORAGE - READ_EXTERNAL_STORAGE
+        android.permission.START_ANY_ACTIVITY - START_ANY_ACTIVITY
+        android.permission.START_TASKS_FROM_RECENTS - START_TASKS_FROM_RECENTS
+        android.permission.BIND_APPWIDGET - BIND_APPWIDGET
+        android.permission.MODIFY_APPWIDGET_BIND_PERMISSIONS - MODIFY_APPWIDGET_BIND_PERMISSIONS
+        android.permission.STATUS_BAR_SERVICE - STATUS_BAR_SERVICE
+        android.permission.CAPTURE_AUDIO_OUTPUT - CAPTURE_AUDIO_OUTPUT
+        android.permission.MODIFY_AUDIO_ROUTING - MODIFY_AUDIO_ROUTING
+        android.permission.MODIFY_AUDIO_SETTINGS - MODIFY_AUDIO_SETTINGS
+        android.permission.REMOTE_AUDIO_PLAYBACK - REMOTE_AUDIO_PLAYBACK
+        android.permission.WRITE_SYNC_SETTINGS - WRITE_SYNC_SETTINGS
+        android.permission.CACHE_CONTENT - CACHE_CONTENT
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.GET_ACCOUNTS - GET_ACCOUNTS
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.READ_SYNC_SETTINGS - READ_SYNC_SETTINGS
+        android.permission.READ_SYNC_STATS - READ_SYNC_STATS
+        android.permission.WRITE_SYNC_SETTINGS - WRITE_SYNC_SETTINGS
+        android.permission.MANAGE_USERS - MANAGE_USERS
+        android.permission.MANAGE_CA_CERTIFICATES - MANAGE_CA_CERTIFICATES
+        android.permission.MANAGE_USERS - MANAGE_USERS
+        android.permission.QUERY_DO_NOT_ASK_CREDENTIALS_ON_BOOT - QUERY_DO_NOT_ASK_CREDENTIALS_ON_BOOT
+        android.permission.BIND_DEVICE_ADMIN - BIND_DEVICE_ADMIN
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.MANAGE_DEVICE_ADMINS - MANAGE_DEVICE_ADMINS
+        android.permission.NOTIFY_PENDING_SYSTEM_UPDATE - NOTIFY_PENDING_SYSTEM_UPDATE
+        android.permission.MANAGE_DEVICE_ADMINS - MANAGE_DEVICE_ADMINS
+        android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS - MANAGE_PROFILE_AND_DEVICE_OWNERS
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL 
+        android.permission.MANAGE_DEVICE_ADMINS - MANAGE_DEVICE_ADMINS 
+        android.permission.MANAGE_USERS - MANAGE_USERS
+        android.permission.CONFIGURE_WIFI_DISPLAY - CONFIGURE_WIFI_DISPLAY
+        android.permission.CAPTURE_SECURE_VIDEO_OUTPUT - CAPTURE_SECURE_VIDEO_OUTPUT
+        android.permission.CAPTURE_VIDEO_OUTPUT - CAPTURE_VIDEO_OUTPUT
+        android.permission.CONFIGURE_DISPLAY_COLOR_MODE - CONFIGURE_DISPLAY_COLOR_MODE
+        android.permission.WRITE_DREAM_STATE - WRITE_DREAM_STATE
+        android.permission.READ_DREAM_STATE - READ_DREAM_STATE
+        android.permission.USE_FINGERPRINT - USE_FINGERPRINT
+        android.permission.MANAGE_FINGERPRINT - MANAGE_FINGERPRINT
+        android.permission.RESET_FINGERPRINT_LOCKOUT - RESET_FINGERPRINT_LOCKOUT
+        android.permission.HDMI_CEC - HDMI_CEC
+        android.permission.SET_KEYBOARD_LAYOUT - SET_KEYBOARD_LAYOUT
+        android.permission.TABLET_MODE - TABLET_MODE
+        android.permission.SET_INPUT_CALIBRATION - SET_INPUT_CALIBRATION
+        android.permission.SET_POINTER_SPEED - SET_POINTER_SPEED
+        android.permission.CONNECTIVITY_INTERNAL - CONNECTIVITY_INTERNAL 
+        android.permission.RECEIVE_BOOT_COMPLETED - RECEIVE_BOOT_COMPLETED 
+        android.permission.UPDATE_DEVICE_STATS - UPDATE_DEVICE_STATS
+        android.permission.MANAGE_MEDIA_PROJECTION - MANAGE_MEDIA_PROJECTION
+        android.permission.MANAGE_NETWORK_POLICY - MANAGE_NETWORK_POLICY
+        android.permission.CONNECTIVITY_INTERNAL - CONNECTIVITY_INTERNAL 
+        android.permission.MANAGE_NETWORK_POLICY - MANAGE_NETWORK_POLICY
+        android.permission.READ_PRIVILEGED_PHONE_STATE - READ_PRIVILEGED_PHONE_STATE
+        android.permission.MODIFY_NETWORK_ACCOUNTING - MODIFY_NETWORK_ACCOUNTING
+        android.permission.PACKAGE_USAGE_STATS - PACKAGE_USAGE_STATS
+        android.permission.READ_NETWORK_USAGE_HISTORY - READ_NETWORK_USAGE_HISTORY
+        android.permission.INSTALL_PACKAGES - DELETE_PACKAGES
+        android.permission.DELETE_PACKAGES - DELETE_PACKAGES
+        android.permission.OBSERVE_GRANT_REVOKE_PERMISSIONS - OBSERVE_GRANT_REVOKE_PERMISSIONS
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.SET_PREFERRED_APPLICATIONS - SET_PREFERRED_APPLICATIONS
+        android.permission.CLEAR_APP_USER_DATA - CLEAR_APP_USER_DATA 
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.SET_PREFERRED_APPLICATIONS - SET_PREFERRED_APPLICATIONS
+        android.permission.DELETE_CACHE_FILES - DELETE_CACHE_FILES
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.DELETE_PACKAGES - DELETE_PACKAGES
+        android.permission.PACKAGE_VERIFICATION_AGENT - PACKAGE_VERIFICATION_AGENT
+        android.permission.CLEAR_APP_CACHE - CLEAR_APP_CACHE
+        android.permission.GET_PACKAGE_SIZE - GET_PACKAGE_SIZE
+        android.permission.SET_PREFERRED_APPLICATIONS - SET_PREFERRED_APPLICATIONS
+        android.permission.PACKAGE_VERIFICATION_AGENT - PACKAGE_VERIFICATION_AGENT
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS - INSTALL_GRANT_RUNTIME_PERMISSIONS
+        android.permission.INSTALL_PACKAGES - INSTALL_PACKAGES
+        android.permission.MOVE_PACKAGE - MOVE_PACKAGE 
+        android.permission.CHANGE_COMPONENT_ENABLED_STATE - CHANGE_COMPONENT_ENABLED_STATE
+        android.permission.DELETE_PACKAGES - DELETE_PACKAGES
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL
+        android.permission.REVOKE_RUNTIME_PERMISSIONS - REVOKE_RUNTIME_PERMISSIONS
+        android.permission.SET_PREFERRED_APPLICATIONS - SET_PREFERRED_APPLICATIONS
+        android.permission.GRANT_RUNTIME_PERMISSIONS - GRANT_RUNTIME_PERMISSIONS
+        android.permission.INTENT_FILTER_VERIFICATION_AGENT - INTENT_FILTER_VERIFICATION_AGENT
+        android.permission.RESET_SHORTCUT_MANAGER_THROTTLING - RESET_SHORTCUT_MANAGER_THROTTLING
+        android.permission.WAKE_LOCK - WAKE_LOCK
+        android.permission.REBOOT - REBOOT 
+        android.permission.RECOVERY - android.permission.RECOVERY 
+        android.permission.UPDATE_DEVICE_STATS - UPDATE_DEVICE_STATS 
+        android.permission.WAKE_LOCK - WAKE_LOCK
+        com.android.printspooler.permission.ACCESS_ALL_PRINT_JOBS - ACCESS_ALL_PRINT_JOBS
+        android.permission.USE_SIP - USE_SIP
+        android.permission.MANAGE_SOUND_TRIGGER - MANAGE_SOUND_TRIGGER
+        android.permission.EXPAND_STATUS_BAR - EXPAND_STATUS_BAR
+        android.permission.TV_INPUT_HARDWARE - TV_INPUT_HARDWARE
+        android.permission.MODIFY_PARENTAL_CONTROLS - MODIFY_PARENTAL_CONTROLS
+        android.permission.CAPTURE_TV_INPUT - CAPTURE_TV_INPUT
+        android.permission.DVB_DEVICE - DVB_DEVICE
+        android.permission.BIND_CARRIER_SERVICES - BIND_CARRIER_SERVICES
+        android.permission.CHANGE_APP_IDLE_STATE - CHANGE_APP_IDLE_STATE
+        android.permission.MANAGE_USB - MANAGE_USB
+        android.permission.ACCESS_VOICE_INTERACTION_SERVICE - ACCESS_VOICE_INTERACTION_SERVICE
+        android.permission.MANAGE_VOICE_KEYPHRASES - MANAGE_VOICE_KEYPHRASES
+        android.permission.SET_WALLPAPER - SET_WALLPAPER
+        android.permission.SET_WALLPAPER_HINTS - SET_WALLPAPER_HINTS
+        android.permission.SET_WALLPAPER_COMPONENT - SET_WALLPAPER_COMPONENT
+        android.permission.CHANGE_WIFI_MULTICAST_STATE - CHANGE_WIFI_MULTICAST_STATE
+        android.permission.CHANGE_WIFI_STATE - CHANGE_WIFI_STATE
+        android.permission.ACCESS_WIFI_STATE - ACCESS_WIFI_STATE
+        android.permission.CONNECTIVITY_INTERNAL - CONNECTIVITY_INTERNAL
+        android.permission.READ_WIFI_CREDENTIAL - READ_WIFI_CREDENTIAL
+        android.permission.INTERACT_ACROSS_USERS_FULL - INTERACT_ACROSS_USERS_FULL 
+        android.permission.PEERS_MAC_ADDRESS - PEERS_MAC_ADDRESS
+        android.permission.SCORE_NETWORKS - SCORE_NETWORKS
+        android.permission.TETHER_PRIVILEGED - TETHER_PRIVILEGED
+        android.permission.UPDATE_DEVICE_STATS - UPDATE_DEVICE_STATS
+        android.permission.CHANGE_WIFI_STATE - CHANGE_WIFI_STATE 
+        android.permission.CONNECTIVITY_INTERNAL - CONNECTIVITY_INTERNAL
+        android.permission.MANAGE_APP_TOKENS - MANAGE_APP_TOKENS
+        android.permission.FRAME_STATS - FRAME_STATS
+        android.permission.DISABLE_KEYGUARD - DISABLE_KEYGUARD
+        android.permission.SET_ORIENTATION - SET_ORIENTATION
+        android.permission.REGISTER_WINDOW_MANAGER_LISTENERS - REGISTER_WINDOW_MANAGER_LISTENERS
+        android.permission.READ_FRAME_BUFFER - READ_FRAME_BUFFER
+        android.permission.SET_ANIMATION_SCALE - SET_ANIMATION_SCALE
+        android.permission.FREEZE_SCREEN - FREEZE_SCREEN
+        android.permission.GET_TASKS - GET_TASKS
+        android.permission.RECEIVE_BOOT_COMPLETED - RECEIVE_BOOT_COMPLETED 
+        android.permission.BROADCAST_STICKY - BROADCAST_STICKY
+        android.permission.MODIFY_AUDIO_SETTINGS - MODIFY_AUDIO_SETTINGS
+        android.permission.CHANGE_NETWORK_STATE - CHANGE_NETWORK_STATE
+        android.permission.ACCESS_WIFI_STATE - ACCESS_WIFI_STATE 
+        android.permission.WAKE_LOCK - WAKE_LOCK
+        android.permission.ACCESS_NETWORK_STATE - ACCESS_NETWORK_STATE  
+        android.permission.ACCESS_FINE_LOCATION - ACCESS_FINE_LOCATION
+        android.permission.ACCESS_COARSE_LOCATION - ACCESS_COARSE_LOCATION 
+        android.permission.READ_PHONE_STATE - READ_PHONE_STATE
+        android.permission.READ_EXTERNAL_STORAGE - READ_EXTERNAL_STORAGE
